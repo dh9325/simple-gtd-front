@@ -3,9 +3,9 @@ import {CommonModule} from '@angular/common';
 import {CoreRoutingModule} from './core-routing.module';
 import {AppComponent} from './containers/app/app.component';
 import {MaterialModule} from '../material/material.module';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
 
-const COMPONENTS = [AppComponent];
+const COMPONENTS = [AppComponent, NavbarComponent];
 
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ const COMPONENTS = [AppComponent];
     CoreRoutingModule,
     MaterialModule,
   ],
-  declarations: [COMPONENTS, NavbarComponent],
+  declarations: [COMPONENTS],
   exports: [COMPONENTS],
 })
 export class CoreModule {
