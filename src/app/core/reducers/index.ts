@@ -1,5 +1,5 @@
-import {environment} from '../../environments/environment';
-import {ActionReducer, ActionReducerMap, MetaReducer, State} from '@ngrx/store';
+import {environment} from '../../../environments/environment';
+import {ActionReducer, ActionReducerMap, MetaReducer} from '@ngrx/store';
 import * as fromRouter from '@ngrx/router-store';
 
 /**
@@ -8,14 +8,13 @@ import * as fromRouter from '@ngrx/router-store';
  * ensure that none of the reducers accidentally mutates the state.
  */
 import {storeFreeze} from 'ngrx-store-freeze';
-import {RouterStateUrl} from '../shared/utils';
+import {RouterStateUrl} from '../../shared/utils';
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
  * our top level state interface is just a map of keys to inner state types.
  */
 export interface State {
-  app: {};
   router: fromRouter.RouterReducerState<RouterStateUrl>;
 }
 

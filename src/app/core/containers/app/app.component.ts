@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {State} from '../../reducers';
+import {Store} from '@ngrx/store';
+import * as RouterActions from '../../actions/router.actions';
 
 @Component({
   selector: 'gtd-root',
@@ -6,5 +9,10 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'app';
+  constructor(private store: Store<State>) {
+  }
+
+  navigateHome() {
+    this.store.dispatch(new RouterActions.Navigate('/'));
+  }
 }
