@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {State} from '../../reducers';
+import {State} from '../../../reducers/index';
 import {Store} from '@ngrx/store';
 import * as RouterActions from '../../actions/router.actions';
 

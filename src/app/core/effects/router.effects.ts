@@ -11,7 +11,7 @@ export class RouterEffects {
   constructor(private actions$: Actions, private router: Router) {
   }
 
-  @Effect()
+  @Effect({dispatch: false})
   navigate$ = this.actions$.pipe(
       ofType(RouterActionTypes.Navigate),
       map((action: Navigate) => action.payload),

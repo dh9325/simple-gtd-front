@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TaskModel} from '../../models/task-model';
 
 @Component({
   selector: 'gtd-task-list',
@@ -6,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./task-list.component.css'],
 })
 export class TaskListComponent implements OnInit {
+  @Input() tasks: TaskModel[];
 
   constructor() {
   }

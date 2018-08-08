@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
-import {TaskListComponent} from './containers/task-list/task-list.component';
+import {TasksComponent} from './containers/tasks/tasks.component';
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'list', pathMatch: 'full'},
-  {path: 'list', component: TaskListComponent},
+  {path: '', redirectTo: 'tasks', pathMatch: 'full'},
+  {path: 'tasks', component: TasksComponent},
 ];

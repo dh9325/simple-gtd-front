@@ -2,15 +2,23 @@ import {Action} from '@ngrx/store';
 import {TaskModel} from '../models/task-model';
 
 export enum TaskActionTypes {
-  List = '[Task] List',
+  Load = '[Task] Load',
+  LoadSuccess = '[Task] LoadSuccess',
   Create = '[Task] Create',
   Get = '[Task] Get',
   Update = '[Task] Update',
   Delete = '[Task] Delete',
 }
 
-export class List implements Action {
-  readonly type = TaskActionTypes.List;
+export class Load implements Action {
+  readonly type = TaskActionTypes.Load;
+}
+
+export class LoadSuccess implements Action {
+  readonly type = TaskActionTypes.LoadSuccess;
+
+  constructor(public payload: TaskModel[]) {
+  }
 }
 
 export class Create implements Action {
@@ -41,4 +49,4 @@ export class Delete implements Action {
   }
 }
 
-export type TaskActions = List | Create | Get | Update | Delete;
+export type TaskActions = Load | LoadSuccess | Create | Get | Update | Delete;

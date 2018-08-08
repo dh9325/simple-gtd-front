@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Actions, Effect} from '@ngrx/effects';
+import {Actions, Effect, ofType} from '@ngrx/effects';
 import {BackendService} from '../services/backend.service';
+import {LoadSuccess, TaskActionTypes} from '../actions/task.actions';
+import {exhaustMap, map} from 'rxjs/operators';
 
 @Injectable()
 export class TaskEffects {
@@ -9,17 +11,12 @@ export class TaskEffects {
   }
 
   @Effect()
-  list$ = this.actions$.pipe();
-
-  @Effect()
-  create$ = this.actions$.pipe();
-
-  @Effect()
-  get$ = this.actions$.pipe();
-
-  @Effect()
-  update$ = this.actions$.pipe();
-
-  @Effect()
-  delete$ = this.actions$.pipe();
+  load$ = this.actions$.pipe(
+      ofType(TaskActionTypes.Load),
+      exhaustMap(action => {
+        return this.service.listTasks().pipe(
+            map(tasks => new LoadSuccess(tasks)),
+        );
+      }),
+  );
 }

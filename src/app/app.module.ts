@@ -4,7 +4,7 @@ import {AppComponent} from './core/containers/app/app.component';
 import {CoreModule} from './core/core.module';
 import {RouterModule} from '@angular/router';
 import {StoreModule} from '@ngrx/store';
-import {metaReducers, reducers} from './core/reducers';
+import {metaReducers, reducers} from './reducers/';
 import {
   RouterStateSerializer,
   StoreRouterConnectingModule,

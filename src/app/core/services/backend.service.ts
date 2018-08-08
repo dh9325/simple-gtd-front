@@ -1,34 +1,35 @@
 import {Injectable} from '@angular/core';
-import {BackendInterface} from './backend.interface';
 import {TaskModel} from '../models/task-model';
+import {Observable} from 'rxjs/Observable';
+import {of} from 'rxjs/observable/of';
 
 @Injectable()
-export class BackendService implements BackendInterface {
+export class BackendService {
 
   constructor() {
   }
 
-  deleteTask(id: number): boolean {
+  deleteTask(id: number): Observable<boolean> {
     // todo: implement
-    return false;
+    return of(false);
   }
 
-  getTask(id: number): TaskModel {
-    // todo: implement
-    return undefined;
-  }
-
-  listTasks(): TaskModel[] {
+  getTask(id: number): Observable<TaskModel> {
     // todo: implement
     return undefined;
   }
 
-  saveTask(todo: TaskModel): TaskModel {
+  listTasks(): Observable<TaskModel[]> {
+    // todo: implement
+    return of([]);
+  }
+
+  saveTask(todo: TaskModel): Observable<TaskModel> {
     // todo: implement
     return undefined;
   }
 
-  updateTask(id: number): TaskModel {
+  updateTask(id: number): Observable<TaskModel> {
     // todo: implement
     return undefined;
   }
